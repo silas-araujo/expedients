@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: MyString
+  spu: MyString
+  exp_type: one
+  destination: one
+  responsible: one
+
+two:
+  topic: MyString
+  spu: MyString
+  exp_type: two
+  destination: two
+  responsible: two

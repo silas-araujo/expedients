@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exp Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exp_types.each do |exp_type| %>
+      <tr>
+        <td><%= exp_type.description %></td>
+        <td><%= link_to 'Show', exp_type %></td>
+        <td><%= link_to 'Edit', edit_exp_type_path(exp_type) %></td>
+        <td><%= link_to 'Destroy', exp_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exp Type', new_exp_type_path %>

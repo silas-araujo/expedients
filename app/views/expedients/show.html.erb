@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @expedient.topic %>
+</p>
+
+<p>
+  <strong>Spu:</strong>
+  <%= @expedient.spu %>
+</p>
+
+<p>
+  <strong>Exp type:</strong>
+  <%= @expedient.exp_type_id %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @expedient.destination_id %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @expedient.responsible_id %>
+</p>
+
+<%= link_to 'Edit', edit_expedient_path(@expedient) %> |
+<%= link_to 'Back', expedients_path %>
