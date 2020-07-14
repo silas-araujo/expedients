@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  exp_date: 2020-07-14
   topic: MyString
   spu: MyString
   exp_type: one
@@ -8,6 +9,7 @@ one:
   responsible: one
 
 two:
+  exp_date: 2020-07-14
   topic: MyString
   spu: MyString
   exp_type: two

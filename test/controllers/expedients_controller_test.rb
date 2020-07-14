@@ -17,7 +17,7 @@ class ExpedientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create expedient" do
     assert_difference('Expedient.count') do
-      post expedients_url, params: { expedient: { destination_id: @expedient.destination_id, exp_type_id: @expedient.exp_type_id, responsible_id: @expedient.responsible_id, spu: @expedient.spu, topic: @expedient.topic } }
+      post expedients_url, params: { expedient: { destination_id: @expedient.destination_id, exp_date: @expedient.exp_date, exp_type_id: @expedient.exp_type_id, responsible_id: @expedient.responsible_id, spu: @expedient.spu, topic: @expedient.topic } }
     end
 
     assert_redirected_to expedient_url(Expedient.last)
@@ -34,7 +34,7 @@ class ExpedientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update expedient" do
-    patch expedient_url(@expedient), params: { expedient: { destination_id: @expedient.destination_id, exp_type_id: @expedient.exp_type_id, responsible_id: @expedient.responsible_id, spu: @expedient.spu, topic: @expedient.topic } }
+    patch expedient_url(@expedient), params: { expedient: { destination_id: @expedient.destination_id, exp_date: @expedient.exp_date, exp_type_id: @expedient.exp_type_id, responsible_id: @expedient.responsible_id, spu: @expedient.spu, topic: @expedient.topic } }
     assert_redirected_to expedient_url(@expedient)
   end
 

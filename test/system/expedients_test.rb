@@ -15,6 +15,7 @@ class ExpedientsTest < ApplicationSystemTestCase
     click_on "New Expedient"
 
     fill_in "Destination", with: @expedient.destination_id
+    fill_in "Exp date", with: @expedient.exp_date
     fill_in "Exp type", with: @expedient.exp_type_id
     fill_in "Responsible", with: @expedient.responsible_id
     fill_in "Spu", with: @expedient.spu
@@ -30,6 +31,7 @@ class ExpedientsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Destination", with: @expedient.destination_id
+    fill_in "Exp date", with: @expedient.exp_date
     fill_in "Exp type", with: @expedient.exp_type_id
     fill_in "Responsible", with: @expedient.responsible_id
     fill_in "Spu", with: @expedient.spu

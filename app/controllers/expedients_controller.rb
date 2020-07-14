@@ -1,6 +1,7 @@
 class ExpedientsController < ApplicationController
   before_action :set_expedient, only: [:show, :edit, :update, :destroy]
-
+ 
+ 
   # GET /expedients
   # GET /expedients.json
   def index
@@ -10,7 +11,6 @@ class ExpedientsController < ApplicationController
   # GET /expedients/1
   # GET /expedients/1.json
   def show
-    
   end
 
   # GET /expedients/new
@@ -70,6 +70,6 @@ class ExpedientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def expedient_params
-      params.require(:expedient).permit(:topic, :spu, :exp_type_id, :destination_id, :responsible_id)
+      params.require(:expedient).permit(:exp_date, :topic, :spu, :exp_type_id, :destination_id, :responsible_id)
     end
 end

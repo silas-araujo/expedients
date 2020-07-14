@@ -11,34 +11,81 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Assunto" %>
-    <%= form.text_field :topic %>
-  </div>
+<div class="panel panel-default form-white">
+  <div class="panel-body form-white">
+    <div class="page-header">
+      <div class="label-panel" style="color: #a6a6a6">
+        <h1><i class="fa fa-file-text-o"></i> Cadastro</h1>
+        <hr class="my-4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          
+           <%= form.label "Data"%>
 
-  <div class="field">
-    <%= form.label "SPU" %>
-    <%= form.text_field :spu %>
-  </div>
+          <%= form.text_field :exp_date , :class => "form-control"%>
 
-  <div class="field">
-    <%= form.label "Tipo" %>
-    
-    <%= collection_select(:expedient, :exp_type_id, ExpType.all, :id, :description ,  prompt: 'Selecione um tipo') %>
-    <%= select("expedient", "exp_type_id", ExpType.all.collect { |p| [ p.description, p.id ] }, { prompt: 'Select Person' }) %>
-  </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+         
+          <%= form.label :destination_id %>
 
-  <div class="field">
-    <%= form.label "Destino" %>
-    <%= form.text_field :destination_id %>
-  </div>
+          <%= collection_select(:expedient, :destination_id, Destination.all, :id, :description,{include_blank: false}, {class: 'form-control mb-2'})%>
 
-  <div class="field">
-    <%= form.label "Responsável" %>
-    <%= form.text_field :responsible_id %>
-  </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
 
-  <div class="actions">  
-    <%= form.submit 'Cadastrar'%>
+          <%= form.label :responsible_id %>
+          <%= collection_select(:expedient, :responsible_id, Responsible.all, :id, :description, {prompt: 'Selecione um reponsável'}, {class: 'form-control mb-2'}) %>
+
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          
+         <%= form.label :exp_type_id %>
+            <% form.text_field :exp_type_id %>
+            <%= collection_select(:expedient, :exp_type_id, ExpType.all, :id, :description, {prompt: 'Selecione um tipo'}, {class: 'form-control mb-2'}) %>
+
+        </div>
+      </div>
+   </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <%= form.label :topic %>
+          <%= form.text_field :topic, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="col-sm-7">
+            <div class="form-group">
+              <%= form.label :spu %>
+              <%= form.text_field :spu, :class => "form-control" %>
+            </div>
+          </div>
+    </div>
+         
+    <div class="row justify-content-end">
+            
+              <%= form.submit "Cadastrar" , :class => "btn btn-primary btn-sm "  %>
+           
+    </div>
+
+    <div class="col align-self-end">
+      <%= form.submit "Cadastrar" , :class => "btn btn-primary btn-sm "  %>
+    </div>
+
   </div>
+</div>
+
 <% end %>

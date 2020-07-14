@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Expedientes</h1>
+<h1>Expedients</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Assunto</th>
-      <th>SPU</th>
-      <th>Tipo</th>
-      <th>Destino</th>
-      <th>Responsável</th>
+      <th>Exp date</th>
+      <th>Topic</th>
+      <th>Spu</th>
+      <th>Exp type</th>
+      <th>Destination</th>
+      <th>Responsible</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-
   <tbody>
     <% @expedients.each do |expedient| %>
       <tr>
+        <td><%= expedient.exp_date %></td>
         <td><%= expedient.topic %></td>
         <td><%= expedient.spu %></td>
         <td><%= expedient.exp_type_id %></td>
-        
         <td><%= expedient.destination_id %></td>
         <td><%= expedient.responsible_id %></td>
-        <td><%= link_to 'Mostrar', expedient %></td>
-        <td><%= link_to 'Editar', edit_expedient_path(expedient) %></td>
-        <td><%= link_to 'Deletar', expedient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', expedient %></td>
+        <td><%= link_to 'Edit', edit_expedient_path(expedient) %></td>
+        <td><%= link_to 'Destroy', expedient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'Cadastrar Expediente', new_expedient_path %>
+<%= link_to 'New Expedient', new_expedient_path %>
