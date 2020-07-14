@@ -34,7 +34,7 @@
          
           <%= form.label :destination_id %>
 
-          <%= collection_select(:expedient, :destination_id, Destination.all, :id, :description,{include_blank: false}, {class: 'form-control mb-2'})%>
+          <%= collection_select(:expedient, :destination_id, Destination.all, :id, :description, {prompt: 'Selecione um destino'}, {class: 'form-control mb-2'})%>
 
         </div>
       </div>
@@ -75,14 +75,17 @@
           </div>
     </div>
          
-    <div class="row justify-content-end">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-9">
+      <%= form.submit "Cadastrar" , :class => "form-control btn-form btn-primary btn-sm "  %>
+      </div>
             
-              <%= form.submit "Cadastrar" , :class => "btn btn-primary btn-sm "  %>
+              
            
     </div>
 
-    <div class="col align-self-end">
-      <%= form.submit "Cadastrar" , :class => "btn btn-primary btn-sm "  %>
+    <div class="col-lg-12" style="text-align: right;">
+      <%= form.submit "Cadastrar" , :class => "btn btn-primary btn-sm"  %>
     </div>
 
   </div>
