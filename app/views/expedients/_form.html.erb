@@ -23,7 +23,9 @@
 
   <div class="field">
     <%= form.label "Tipo" %>
-    <%= form.text_field :exp_type_id %>
+    
+    <%= collection_select(:expedient, :exp_type_id, ExpType.all, :id, :description ,  prompt: 'Selecione um tipo') %>
+    <%= select("expedient", "exp_type_id", ExpType.all.collect { |p| [ p.description, p.id ] }, { prompt: 'Select Person' }) %>
   </div>
 
   <div class="field">
